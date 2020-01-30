@@ -5,10 +5,21 @@ import * as Yup from 'yup';
 const UserForm = ({ values, errors, touched, isSubmitting, isValid }) => {
     return (
             <Form>
-                <Field type='text' name='name' placeholder='name'/> 
-                <Field type='text' name='email' placeholder='email'/>
-                <Field type='text' name='password' placeholder='password'/>
-                <Field type='checkbox' name='tos' checked={values.tos}/>
+                <div>
+                    {touched.name && errors.name && <p>{errors.name}</p>]}
+                    <Field type='text' name='name' placeholder='name'/> 
+                </div>
+                <div>
+                    {touched.email && errors.email && <p>{errors.email}</p>}
+                    <Field type='text' name='email' placeholder='email'/>
+                </div>
+                <div>
+                    {touched.password && errors.password && <p>{errors.password}</p>}
+                    <Field type='text' name='password' placeholder='password'/>
+                </div>
+                <div>
+                    <Field type='checkbox' name='tos' checked={values.tos}/>
+                </div>
                 <button type='submit' disabled={!values.tos || !isValid}>Submit</button>
             </Form>
     );
@@ -20,7 +31,7 @@ const FormikUserForm = withFormik({
             name: name || '',
             email: email || '',
             password: password || '',
-            tos: tos || false;
+            tos: tos || false
         }
     }, 
     validationSchema: Yup.object().shape({
