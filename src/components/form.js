@@ -6,16 +6,16 @@ const UserForm = ({ values, errors, touched, isSubmitting, isValid }) => {
     return (
             <Form>
                 <div>
-                    {touched.name && errors.name && <p>{errors.name}</p>]}
-                    <Field type='text' name='name' placeholder='name'/> 
+                    <Field type='text' name='name' placeholder='name'/>
+                    {touched.name && errors.name && <span>{errors.name}</span>}
                 </div>
                 <div>
-                    {touched.email && errors.email && <p>{errors.email}</p>}
                     <Field type='text' name='email' placeholder='email'/>
+                    {touched.email && errors.email && <span>{errors.email}</span>}
                 </div>
                 <div>
-                    {touched.password && errors.password && <p>{errors.password}</p>}
                     <Field type='text' name='password' placeholder='password'/>
+                    {touched.password && errors.password && <span>{errors.password}</span>}
                 </div>
                 <div>
                     <Field type='checkbox' name='tos' checked={values.tos}/>
@@ -45,4 +45,7 @@ const FormikUserForm = withFormik({
             .required('Password is required.')
 
       }),
-})
+})(UserForm);
+
+
+export default FormikUserForm;
