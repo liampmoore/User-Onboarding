@@ -22,7 +22,7 @@ const UserForm = ({ values, errors, touched, isSubmitting, isValid }) => {
                 <div>
                     <br/>
                     <Field type='checkbox' name='tos' checked={values.tos}/>
-                    {!values.tos ? <>{' '}<a href='#' className='warning'>Terms of service.</a></> :<>{' '}<span className='confirmed'>Agreed.</span></>}
+                    {!values.tos ? <>{' '}<a href='#tos' className='warning'>Terms of service.</a></> :<>{' '}<span className='confirmed'>Agreed.</span></>}
                 </div>
                 <br/>
                 <button type='submit' disabled={!values.tos || !isValid}>Submit</button>

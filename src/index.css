@@ -2,6 +2,14 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  background: linear-gradient(214deg, #cdc3d4, #a4c9d4, #cca9a9);
+  background-size: 600% 600%;
+
+  -webkit-animation: AnimationName 43s ease infinite;
+  -moz-animation: AnimationName 43s ease infinite;
+  animation: AnimationName 43s ease infinite;
+
 }
 
 code {
@@ -10,3 +18,18 @@ code {
 }
 
 
+@-webkit-keyframes AnimationName {
+  0%{background-position:0% 47%}
+  50%{background-position:100% 54%}
+  100%{background-position:0% 47%}
+}
+@-moz-keyframes AnimationName {
+  0%{background-position:0% 47%}
+  50%{background-position:100% 54%}
+  100%{background-position:0% 47%}
+}
+@keyframes AnimationName {
+  0%{background-position:0% 47%}
+  50%{background-position:100% 54%}
+  100%{background-position:0% 47%}
+}
