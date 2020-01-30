@@ -47,10 +47,11 @@ const FormikUserForm = withFormik({
             .required('Password is required.')
 
       }),
-      handleSubmit(values) {
+      handleSubmit(values, toolkit) {
           axios.post('https://reqres.in/api/users', values)
             .then(res => {
                 console.log(res.data);
+                toolkit.props.setUsers([...toolkit.props.users, res.data]);
             })
             .catch(err => {
                 console.log(err)
