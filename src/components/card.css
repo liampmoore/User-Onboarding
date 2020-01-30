@@ -1,0 +1,36 @@
+.card {
+    border: 1.4px solid black;
+    box-shadow: 5px 10px;
+    border-radius: 5px;
+  
+    box-sizing: border-box;
+    padding: 5%;
+  
+    margin: 30px auto;
+
+    font: 400 11px system-ui;
+    font-style: normal;
+    font-variant-ligatures: normal;
+    font-variant-caps: normal;
+    font-variant-numeric: normal;
+    font-variant-east-asian: normal;
+    font-weight: 400;
+    font-stretch: normal;
+    font-size: 11px;
+    line-height: normal;
+    font-family: system-ui;
+  }
+
+
+.error {
+    color: red;
+}
+
+.warning {
+    color: blue;
+    text-decoration: none;
+}
+
+.confirmed {
+    color: green;
+}

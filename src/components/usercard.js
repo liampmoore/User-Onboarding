@@ -1,10 +1,11 @@
 import React from 'react';
+import styles from './card.css';
 
 export default function UserCard({user}) {
     return (
-        <div>
+        <div className='card'>
         <h3>{user.name}</h3>
-        <a href={user.email}>{user.email}</a>
+        <p><a href={`mailto:${user.email}`}>{user.email}</a></p>
         </div>
     )
 }
