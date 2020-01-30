@@ -14,11 +14,12 @@ const UserForm = ({ values, errors, touched, isSubmitting, isValid }) => {
                     {touched.email && errors.email && <span>{errors.email}</span>}
                 </div>
                 <div>
-                    <Field type='text' name='password' placeholder='password'/>
+                    <Field type='password' name='password' placeholder='password'/>
                     {touched.password && errors.password && <span>{errors.password}</span>}
                 </div>
                 <div>
                     <Field type='checkbox' name='tos' checked={values.tos}/>
+                    {!values.tos ? <span>Terms of service.</span> : <span>Agreed.</span>}
                 </div>
                 <button type='submit' disabled={!values.tos || !isValid}>Submit</button>
             </Form>
@@ -45,6 +46,9 @@ const FormikUserForm = withFormik({
             .required('Password is required.')
 
       }),
+      handleSubmit(values) {
+          console.log(values)
+      }
 })(UserForm);
 
 
